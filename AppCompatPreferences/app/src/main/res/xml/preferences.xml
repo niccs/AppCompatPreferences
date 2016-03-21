@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:summary="Trying intro text">
+    <PreferenceCategory android:title="Settings">
+        <CheckBoxPreference
+            android:defaultValue="true"
+            android:key="defaultPress"
+            android:title="Default settings" />
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="customKey"
+            android:title="Custom" />
+        <PreferenceScreen
+            android:key="customPrefKey"
+            android:title="Custom Pattern Settings">
+            <PreferenceCategory
+                android:key="customSettingsKey"
+                android:title="Custom Settings">
+                <ListPreference
+                    android:defaultValue="4"
+                    android:entries="@array/initialClickArray"
+                    android:entryValues="@array/initialClickValues"
+                    android:key="initialClicks"
+                    android:summary="initialClicksSummary"
+                    android:title="No. Of Clicks" />
+                <ListPreference
+                    android:defaultValue="5"
+                    android:entries="@array/initialTimeArray"
+                    android:entryValues="@array/initialTimeValues"
+                    android:key="initialTimeKey"
+                    android:summary="Time to complete clicks"
+                    android:title="Time to complete" />
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>
+</PreferenceScreen>
